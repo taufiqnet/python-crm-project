@@ -1,0 +1,11 @@
+from django.test import TestCase
+from django.shortcuts import reverse
+
+class LandingPageTest(TestCase):
+    
+    def test_get(self):
+        # To do some sort of test
+        response = self.client.get(reverse("landing_page"))
+        #print(response.content)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response,"landing.html")
